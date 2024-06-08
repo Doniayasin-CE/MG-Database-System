@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="384.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CashsController">
+   <children>
+      <VBox layoutX="4.0" layoutY="33.0" prefHeight="167.0" prefWidth="71.0" spacing="15.0">
+         <children>
+            <Label text="Sale ID">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Process Number">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Bank Cash">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Direct Cash">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Discounts">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      
+      <VBox layoutX="67.0" layoutY="37.0" prefHeight="158.0" prefWidth="126.0" spacing="10.0">
+         <children>
+            <TextField fx:id="txt_saleID" prefHeight="32.0" prefWidth="126.0" />
+            <TextField fx:id="txt_processNumber" />
+            <TextField fx:id="txt_bankCash" />
+            <TextField fx:id="txt_directCash" />
+            <TextField fx:id="txt_discounts" />
+         </children>
+      </VBox>
+      <TableView fx:id="tv_cashs" layoutX="212.0" layoutY="66.0" onMouseClicked="#handleRowSelection" prefHeight="297.0" prefWidth="448.0">
+        <columns>
+          <TableColumn fx:id="tv_saleID" prefWidth="89.6" text="Sale ID" />
+          <TableColumn fx:id="tv_processNumber" prefWidth="89.6" text="Process Number" />
+          <TableColumn fx:id="tv_bankCash" prefWidth="89.6" text="Bank Cash" />
+          <TableColumn fx:id="tv_directCash" prefWidth="89.6" text="Direct Cash" />
+          <TableColumn fx:id="tv_discounts" prefWidth="89.6" text="Discounts" />
+        </columns>
+      </TableView>
+      <Button fx:id="btn_insert" layoutX="85.0" layoutY="235.0" mnemonicParsing="false" onAction="#insertRecord" prefHeight="26.0" prefWidth="78.0" text="Insert" />
+      <Button fx:id="btn_update" layoutX="85.0" layoutY="278.0" mnemonicParsing="false" onAction="#updateRecord" prefHeight="26.0" prefWidth="78.0" text="Update" />
+      <Button fx:id="btn_delete" layoutX="85.0" layoutY="322.0" mnemonicParsing="false" onAction="#deleteRecord" prefHeight="26.0" prefWidth="78.0" text="Delete" />
+      <Label layoutX="380.0" layoutY="14.0" text="Cashs Table">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

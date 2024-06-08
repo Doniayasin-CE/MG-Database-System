@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ServiceController">
+   <children>
+      <VBox layoutX="20.0" layoutY="30.0" spacing="10.0">
+         <children>
+            <Label text="Service ID">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="serviceIDField" prefHeight="32.0" prefWidth="200.0"/>
+            <Label text="Customer ID">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="customarIDField" prefHeight="32.0" prefWidth="200.0"/>
+            <Label text="Car ID">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="carIDField" prefHeight="32.0" prefWidth="200.0"/>
+            <Label text="Service Description">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="serviceDescriptionField" prefHeight="32.0" prefWidth="200.0"/>
+            <Button mnemonicParsing="false" text="Add Service" onAction="#addService"/>
+            <Button mnemonicParsing="false" text="Update Service" onAction="#updateService"/>
+            <Button mnemonicParsing="false" text="Delete Service" onAction="#deleteService"/>
+         </children>
+      </VBox>
+      <TableView fx:id="serviceTable" layoutX="250.0" layoutY="30.0" prefHeight="330.0" prefWidth="330.0" onMouseClicked="#handleRowSelection">
+        <columns>
+          <TableColumn fx:id="serviceIDColumn" prefWidth="75.0" text="Service ID"/>
+          <TableColumn fx:id="serviceCustomerIDColumn" prefWidth="75.0" text="Customer ID"/>
+          <TableColumn fx:id="serviceCarIDColumn" prefWidth="75.0" text="Car ID"/>
+          <TableColumn fx:id="serviceDescriptionColumn" prefWidth="105.0" text="Service Description"/>
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

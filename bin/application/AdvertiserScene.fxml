@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="application.AdvertiserController">
+    <VBox spacing="10" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+        <TableView fx:id="advertiserTable" VBox.vgrow="ALWAYS" onMouseClicked="#handleRowSelection">
+            <columns>
+                <TableColumn fx:id="employeeIDColumn" text="Employee ID"/>
+                <TableColumn fx:id="pointsColumn" text="Points"/>
+            </columns>
+        </TableView>
+        <HBox spacing="10">
+            <VBox spacing="5">
+                <Label text="Employee ID:"/>
+                <TextField fx:id="employeeIDField"/>
+                <Label text="Points:"/>
+                <TextField fx:id="pointsField"/>
+            </VBox>
+            <VBox spacing="10">
+                <Button text="Add" onAction="#addAdvertiser"/>
+                <Button text="Update" onAction="#updateAdvertiser"/>
+                <Button text="Delete" onAction="#deleteAdvertiser"/>
+            </VBox>
+        </HBox>
+    </VBox>
+</AnchorPane>

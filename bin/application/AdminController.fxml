@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminController">
+    <left>
+        <TabPane fx:id="tabPane" side="LEFT" styleClass="tab-pane" tabClosingPolicy="UNAVAILABLE">
+            <!-- Customer Tab -->
+            <Tab styleClass="tab" text="Customers">
+                <AnchorPane>
+                    <BorderPane>
+                        <center>
+                            <VBox spacing="10" styleClass="vbox">
+                                <HBox spacing="10" styleClass="hbox">
+                                    <VBox spacing="5">
+                                        <Label styleClass="label" text="Customer ID" />
+                                        <TextField fx:id="customerIDField" styleClass="text-field" />
+                                    </VBox>
+                                    <VBox spacing="5">
+                                        <Label styleClass="label" text="Customer Name" />
+                                        <TextField fx:id="customerNameField" styleClass="text-field" />
+                                    </VBox>
+                                    <VBox spacing="5">
+                                        <Label styleClass="label" text="Email" />
+                                        <TextField fx:id="emailField" styleClass="text-field" />
+                                    </VBox>
+                                    <VBox spacing="5">
+                                        <Label styleClass="label" text="NIN" />
+                                        <TextField fx:id="ninField" styleClass="text-field" />
+                                    </VBox>
+                                    <VBox spacing="5">
+                                        <Label styleClass="label" text="Phone" />
+                                        <TextField fx:id="phoneField" styleClass="text-field" />
+                                    </VBox>
+                                </HBox>
+                                <TableView fx:id="customerTable" onMouseClicked="#handleCustomerRowSelection" prefHeight="215.0" prefWidth="785.0" styleClass="table-view">
+                                    <columns>
+                                        <TableColumn fx:id="customerIDColumn" prefWidth="106.0000057220459" styleClass="table-column" text="Customer ID" />
+                                        <TableColumn fx:id="customerNameColumn" prefWidth="122.66669464111328" styleClass="table-column" text="Customer Name" />
+                                        <TableColumn fx:id="emailColumn" prefWidth="109.99998474121094" styleClass="table-column" text="Email" />
+                                        <TableColumn fx:id="ninColumn" minWidth="8.0" prefWidth="113.33331298828125" styleClass="table-column" text="NIN" />
+                                    </columns>
+                                </TableView>
+                                <TableView fx:id="phoneTable" onMouseClicked="#handlePhoneRowSelection" prefHeight="202.0" prefWidth="785.0" styleClass="table-view">
+                                    <columns>
+                                        <TableColumn fx:id="phoneCustomerIDColumn" prefWidth="118.66669273376465" styleClass="table-column" text="Customer ID" />
+                                        <TableColumn fx:id="phoneColumn" prefWidth="115.33328247070312" styleClass="table-column" text="Phone" />
+                                    </columns>
+                                </TableView>
+                                <HBox spacing="10" styleClass="hbox">
+                                    <Button onAction="#addCustomer" styleClass="button" text="Add Customer" />
+                                    <Button onAction="#updateCustomer" styleClass="button" text="Update Customer" />
+                                    <Button onAction="#deleteCustomer" styleClass="button" text="Delete Customer" />
+                                    <Button onAction="#addPhone" styleClass="button" text="Add Phone" />
+                                    <Button onAction="#updatePhone" styleClass="button" text="Update Phone" />
+                                    <Button onAction="#deletePhone" styleClass="button" text="Delete Phone" />
+                                </HBox>
+                            </VBox>
+                        </center>
+                    </BorderPane>
+                </AnchorPane>
+            </Tab>
+
+            <!-- Car Tab -->
+            <Tab styleClass="tab" text="Cars">
+                <AnchorPane>
+                    <VBox spacing="10" styleClass="vbox">
+                        <HBox spacing="10" styleClass="hbox">
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Car ID" />
+                                <TextField fx:id="carIDField" styleClass="text-field" />
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Car Model" />
+                                <TextField fx:id="carModelField" styleClass="text-field" />
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Car Type" />
+                                <TextField fx:id="carTypeField" styleClass="text-field" />
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Car Color" />
+                                <TextField fx:id="carColorField" styleClass="text-field" />
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Car Status" />
+                                <TextField fx:id="carStatusField" styleClass="text-field" />
+                            </VBox>
+                        </HBox>
+                        <TableView fx:id="carTable" onMouseClicked="#handleCarRowSelection" styleClass="table-view">
+                            <columns>
+                                <TableColumn fx:id="carIDColumn" styleClass="table-column" text="Car ID" />
+                                <TableColumn fx:id="carModelColumn" prefWidth="152.00003814697266" styleClass="table-column" text="Car Model" />
+                                <TableColumn fx:id="carTypeColumn" prefWidth="149.99998474121094" styleClass="table-column" text="Car Type" />
+                                <TableColumn fx:id="carColorColumn" prefWidth="138.66671752929688" styleClass="table-column" text="Car Color" />
+                                <TableColumn fx:id="carStatusColumn" prefWidth="124.66668701171875" styleClass="table-column" text="Car Status" />
+                            </columns>
+                        </TableView>
+                        <HBox spacing="10" styleClass="hbox">
+                            <Button onAction="#addCar" styleClass="button" text="Add Car" />
+                            <Button onAction="#updateCar" styleClass="button" text="Update Car" />
+                            <Button onAction="#deleteCar" styleClass="button" text="Delete Car" />
+                        </HBox>
+                    </VBox>
+                </AnchorPane>
+            </Tab>
+
+            <!-- Service Tab -->
+            <Tab styleClass="tab" text="Services">
+                <AnchorPane>
+                    <VBox spacing="10" styleClass="vbox">
+                        <HBox spacing="10" styleClass="hbox">
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Service ID" />
+                                <TextField fx:id="serviceIDField" styleClass="text-field" />
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Customer ID" />
+                                <TextField fx:id="serviceCustomerIDField" styleClass="text-field" />
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Car ID" />
+                                <TextField fx:id="carIDField1" styleClass="text-field" />
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Service Description" />
+                                <TextField fx:id="serviceDescriptionField" styleClass="text-field" />
+                            </VBox>
+                        </HBox>
+                        <TableView fx:id="serviceTable" onMouseClicked="#handleServiceRowSelection" styleClass="table-view">
+                            <columns>
+                                <TableColumn fx:id="serviceIDColumn" prefWidth="97.33330726623535" styleClass="table-column" text="Service ID" />
+                                <TableColumn fx:id="serviceCustomerIDColumn" prefWidth="109.3333969116211" styleClass="table-column" text="Customer ID" />
+                                <TableColumn fx:id="serviceCarIDColumn" prefWidth="97.99998474121094" styleClass="table-column" text="Car ID" />
+                                <TableColumn fx:id="serviceDescriptionColumn" prefWidth="171.33334350585938" styleClass="table-column" text="Service Description" />
+                            </columns>
+                        </TableView>
+                        <HBox spacing="10" styleClass="hbox">
+                            <Button onAction="#addService" styleClass="button" text="Add Service" />
+                            <Button onAction="#updateService" styleClass="button" text="Update Service" />
+                            <Button onAction="#deleteService" styleClass="button" text="Delete Service" />
+                        </HBox>
+                    </VBox>
+                </AnchorPane>
+            </Tab>
+
+            <!-- Advertiser Tab -->
+            <Tab styleClass="tab" text="Advertisers">
+                <AnchorPane>
+                    <VBox spacing="10" styleClass="vbox">
+                        <HBox spacing="10" styleClass="hbox">
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Employee ID" />
+                                <TextField fx:id="advertiserEmployeeIDField" styleClass="text-field" />
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Points" />
+                                <TextField fx:id="pointsField" styleClass="text-field" />
+                            </VBox>
+                        </HBox>
+                        <TableView fx:id="advertiserTable" onMouseClicked="#handleAdvertiserRowSelection" styleClass="table-view">
+                            <columns>
+                                <TableColumn fx:id="advertiserEmployeeIDColumn" prefWidth="122.66668891906738" styleClass="table-column" text="Employee ID" />
+                                <TableColumn fx:id="pointsColumn" prefWidth="120.0" styleClass="table-column" text="Points" />
+                            </columns>
+                        </TableView>
+                        <HBox spacing="10" styleClass="hbox">
+                            <Button onAction="#addAdvertiser" styleClass="button" text="Add Advertiser" />
+                            <Button onAction="#updateAdvertiser" styleClass="button" text="Update Advertiser" />
+                            <Button onAction="#deleteAdvertiser" styleClass="button" text="Delete Advertiser" />
+                        </HBox>
+                    </VBox>
+                </AnchorPane>
+            </Tab>
+
+            <!-- Manager Tab -->
+            <Tab styleClass="tab" text="Managers">
+                <AnchorPane>
+                    <VBox spacing="10" styleClass="vbox">
+                        <HBox spacing="10" styleClass="hbox">
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Employee ID" />
+                                <TextField fx:id="managerEmployeeIDField" styleClass="text-field" />
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Monthly Report" />
+                                <TextField fx:id="monthlyReportField" styleClass="text-field" />
+                            </VBox>
+                        </HBox>
+                        <TableView fx:id="managerTable" onMouseClicked="#handleManagerRowSelection" styleClass="table-view">
+                            <columns>
+                                <TableColumn fx:id="managerEmployeeIDColumn" prefWidth="125.33333778381348" styleClass="table-column" text="Employee ID" />
+                                <TableColumn fx:id="monthlyReportColumn" prefWidth="139.9999771118164" styleClass="table-column" text="Monthly Report" />
+                            </columns>
+                        </TableView>
+                        <HBox spacing="10" styleClass="hbox">
+                            <Button onAction="#addManager" styleClass="button" text="Add Manager" />
+                            <Button onAction="#updateManager" styleClass="button" text="Update Manager" />
+                            <Button onAction="#deleteManager" styleClass="button" text="Delete Manager" />
+                        </HBox>
+                    </VBox>
+                </AnchorPane>
+            </Tab>
+
+            <!-- Employee Tab -->
+            <Tab styleClass="tab" text="Employees">
+                <AnchorPane>
+                    <VBox spacing="10" styleClass="vbox">
+                        <HBox spacing="10" styleClass="hbox">
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Employee ID" />
+                                <TextField fx:id="employeeIDField" styleClass="text-field" />
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Employee Name" />
+                                <TextField fx:id="employeeNameField" styleClass="text-field" />
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Salary" />
+                                <TextField fx:id="salaryField" styleClass="text-field" />
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Date of Employment" />
+                                <DatePicker fx:id="dateOfEmploymentPicker" styleClass="date-picker" />
+                            </VBox>
+                        </HBox>
+                        <TableView fx:id="employeeTable" onMouseClicked="#handleEmployeeRowSelection" styleClass="table-view">
+                            <columns>
+                                <TableColumn fx:id="employeeIDColumn" prefWidth="129.33330726623535" styleClass="table-column" text="Employee ID" />
+                                <TableColumn fx:id="employeeNameColumn" prefWidth="136.00000762939453" styleClass="table-column" text="Employee Name" />
+                                <TableColumn fx:id="salaryColumn" prefWidth="81.33331298828125" styleClass="table-column" text="Salary" />
+                                <TableColumn fx:id="dateOfEmploymentColumn" prefWidth="187.3333740234375" styleClass="table-column" text="Date of Employment" />
+                            </columns>
+                        </TableView>
+                        <HBox spacing="10" styleClass="hbox">
+                            <Button onAction="#addEmployee" styleClass="button" text="Add Employee" />
+                            <Button onAction="#updateEmployee" styleClass="button" text="Update Employee" />
+                            <Button onAction="#deleteEmployee" styleClass="button" text="Delete Employee" />
+                        </HBox>
+                    </VBox>
+                </AnchorPane>
+            </Tab>
+
+            <!-- Salesman Tab -->
+            <Tab styleClass="tab" text="Salesmans">
+                <AnchorPane>
+                    <VBox spacing="10" styleClass="vbox">
+                        <HBox spacing="10" styleClass="hbox">
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Employee ID" />
+                                <TextField fx:id="salesmanEmployeeIDField" styleClass="text-field" />
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Employee Target" />
+                                <TextField fx:id="employeeTargetField" styleClass="text-field" />
+                            </VBox>
+                        </HBox>
+                        <TableView fx:id="salesmanTable" onMouseClicked="#handleSalesmanRowSelection" styleClass="table-view">
+                            <columns>
+                                <TableColumn fx:id="salesmanEmployeeIDColumn" prefWidth="122.66665840148926" styleClass="table-column" text="Employee ID" />
+                                <TableColumn fx:id="employeeTargetColumn" prefWidth="150.66665649414062" styleClass="table-column" text="Employee Target" />
+                            </columns>
+                        </TableView>
+                        <HBox spacing="10" styleClass="hbox">
+                            <Button onAction="#addSalesman" styleClass="button" text="Add Salesman" />
+                            <Button onAction="#updateSalesman" styleClass="button" text="Update Salesman" />
+                            <Button onAction="#deleteSalesman" styleClass="button" text="Delete Salesman" />
+                        </HBox>
+                    </VBox>
+                </AnchorPane>
+            </Tab>
+
+            <!-- Sale Tab -->
+            <Tab styleClass="tab" text="Sales">
+                <AnchorPane>
+                    <VBox spacing="10" styleClass="vbox">
+                        <HBox spacing="10" styleClass="hbox">
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Sale ID" />
+                                <TextField fx:id="saleIDField" styleClass="text-field" />
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Sale Description" />
+                                <TextField fx:id="saleDescriptionField" styleClass="text-field" />
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Customer ID" />
+                                <TextField fx:id="saleCustomerIDField" styleClass="text-field" />
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Car ID" />
+                                <TextField fx:id="saleCarIDField" styleClass="text-field" />
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Employee ID" />
+                                <TextField fx:id="saleEmployeeIDField" styleClass="text-field" />
+                            </VBox>
+                        </HBox>
+                        <TableView fx:id="salesTable" onMouseClicked="#handleSaleRowSelection" styleClass="table-view">
+                            <columns>
+                                <TableColumn fx:id="saleIDColumn" styleClass="table-column" text="Sale ID" />
+                                <TableColumn fx:id="saleDescriptionColumn" prefWidth="139.33336639404297" styleClass="table-column" text="Sale Description" />
+                                <TableColumn fx:id="saleCustomerIDColumn" prefWidth="115.33335876464844" styleClass="table-column" text="Customer ID" />
+                                <TableColumn fx:id="saleCarIDColumn" prefWidth="92.0" styleClass="table-column" text="Car ID" />
+                                <TableColumn fx:id="saleEmployeeIDColumn" prefWidth="134.0" styleClass="table-column" text="Employee ID" />
+                            </columns>
+                        </TableView>
+                        <HBox spacing="10" styleClass="hbox">
+                            <Button onAction="#addSale" styleClass="button" text="Add Sale" />
+                            <Button onAction="#updateSale" styleClass="button" text="Update Sale" />
+                            <Button onAction="#deleteSale" styleClass="button" text="Delete Sale" />
+                        </HBox>
+                    </VBox>
+                </AnchorPane>
+            </Tab>
+
+            <!-- Cash Tab -->
+            <Tab styleClass="tab" text="Cash">
+                <AnchorPane>
+                    <VBox spacing="10" styleClass="vbox">
+                        <HBox spacing="10" styleClass="hbox">
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Sale ID" />
+                                <TextField fx:id="cashSaleIDField" styleClass="text-field" />
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Process Number" />
+                                <TextField fx:id="cashProcessNumberField" styleClass="text-field" />
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Bank Cash" />
+                                <TextField fx:id="cashBankCashField" styleClass="text-field" />
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Direct Cash" />
+                                <TextField fx:id="cashDirectCashField" styleClass="text-field" />
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Discounts" />
+                                <TextField fx:id="cashDiscountsField" styleClass="text-field" />
+                            </VBox>
+                        </HBox>
+                        <TableView fx:id="cashTable" onMouseClicked="#handleCashRowSelection" styleClass="table-view">
+                            <columns>
+                                <TableColumn fx:id="cashSaleIDColumn" styleClass="table-column" text="Sale ID" />
+                                <TableColumn fx:id="cashProcessNumberColumn" prefWidth="142.66667938232422" styleClass="table-column" text="Process Number" />
+                                <TableColumn fx:id="cashBankCashColumn" prefWidth="122.66664123535156" styleClass="table-column" text="Bank Cash" />
+                                <TableColumn fx:id="cashDirectCashColumn" prefWidth="112.0" styleClass="table-column" text="Direct Cash" />
+                                <TableColumn fx:id="cashDiscountsColumn" prefWidth="106.0" styleClass="table-column" text="Discounts" />
+                            </columns>
+                        </TableView>
+                        <HBox spacing="10" styleClass="hbox">
+                            <Button onAction="#addCash" styleClass="button" text="Add Cash" />
+                            <Button onAction="#updateCash" styleClass="button" text="Update Cash" />
+                            <Button onAction="#deleteCash" styleClass="button" text="Delete Cash" />
+                        </HBox>
+                    </VBox>
+                </AnchorPane>
+            </Tab>
+
+            <!-- Installment Payments Tab -->
+            <Tab styleClass="tab" text="Installment Payments">
+                <AnchorPane>
+                    <VBox spacing="10" styleClass="vbox">
+                        <HBox spacing="10" styleClass="hbox">
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Sale ID" />
+                                <TextField fx:id="txt_saleID" styleClass="text-field" />
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Process Number" />
+                                <TextField fx:id="txt_processNumber" styleClass="text-field" />
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Total Cost" />
+                                <TextField fx:id="txt_totalCost" styleClass="text-field" />
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="First Payment" />
+                                <TextField fx:id="txt_firstPayment" styleClass="text-field" />
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Monthly Installment" />
+                                <TextField fx:id="txt_monthlyInstallment" styleClass="text-field" />
+                            </VBox>
+                            <VBox spacing="5">
+                                <Label styleClass="label" text="Number of Months" />
+                                <TextField fx:id="txt_numberOfMonths" styleClass="text-field" />
+                            </VBox>
+                        </HBox>
+                        <TableView fx:id="tv_installmentPayments" onMouseClicked="#handleInstallmentRowSelection" styleClass="table-view">
+                            <columns>
+                                <TableColumn fx:id="tv_saleID" styleClass="table-column" text="Sale ID" />
+                                <TableColumn fx:id="tv_processNumber" prefWidth="144.66667938232422" styleClass="table-column" text="Process Number" />
+                                <TableColumn fx:id="tv_totalCost" prefWidth="104.66664123535156" styleClass="table-column" text="Total Cost" />
+                                <TableColumn fx:id="tv_firstPayment" prefWidth="128.0" styleClass="table-column" text="First Payment" />
+                                <TableColumn fx:id="tv_monthlyInstallment" prefWidth="180.0" styleClass="table-column" text="Monthly Installment" />
+                                <TableColumn fx:id="tv_numberOfMonths" prefWidth="169.33331298828125" styleClass="table-column" text="Number of Months" />
+                            </columns>
+                        </TableView>
+                        <HBox spacing="10" styleClass="hbox">
+                            <Button onAction="#insertInstallmentRecord" styleClass="button" text="Add Installment" />
+                            <Button onAction="#updateInstallmentRecord" styleClass="button" text="Update Installment" />
+                            <Button onAction="#deleteInstallmentRecord" styleClass="button" text="Delete Installment" />
+                        </HBox>
+                    </VBox>
+                </AnchorPane>
+            </Tab>
+        </TabPane>
+    </left>
+    <center>
+        <VBox spacing="10" styleClass="vbox">
+            <!-- Your central content, such as tables, goes here -->
+        </VBox>
+    </center>
+</BorderPane>

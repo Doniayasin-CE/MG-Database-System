@@ -1,0 +1,89 @@
+/* Set the background color for the entire application */
+.root {
+    -fx-background-color: #f4f4f4;
+}
+
+/* Style for Sidebar */
+.sidebar {
+    -fx-background-color: #0f6b7d;
+    -fx-padding: 10;
+}
+
+/* Style for Sidebar Labels */
+.sidebar-label {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* Style for TabPane */
+.tab-pane {
+    -fx-background-color: #dedede;
+}
+
+/* Style for individual tabs */
+.tab {
+    -fx-background-color: #ffffff;
+}
+
+/* Style for VBox and HBox */
+.vbox, .hbox {
+    -fx-spacing: 10;
+    -fx-padding: 10;
+}
+
+/* Style for TableView */
+.table-view {
+    -fx-background-color: #e7f0fd;
+    -fx-table-cell-border-color: transparent;
+    -fx-padding: 10;
+}
+
+/* Style for TableColumn headers */
+.table-column {
+    -fx-font-weight: bold;
+}
+
+/* Style for Labels */
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+}
+
+/* Style for TextFields */
+.text-field {
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+    -fx-padding: 5px;
+}
+
+/* Style for DatePicker */
+.date-picker {
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+    -fx-padding: 5px;
+}
+
+/* Style for CheckBox */
+.check-box {
+    -fx-text-fill: #333333;
+}
+
+/* Style for Buttons */
+.button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px 20px;
+}
+
+.button:hover {
+    -fx-background-color: #45a049;
+}
+
+.button:pressed {
+    -fx-background-color: #3e8e41;
+}
