@@ -1,18 +1,27 @@
 package application;
 
-public class CustomersPhone extends Customer {
-    private long phone;
+public class CustomersPhone {
+	private int customerID;
+	private long phone;
 
-    public CustomersPhone(int customerID, long phone) {
-        super(customerID, null, null, null);  // Call the parent constructor for customerID
-        this.phone = phone;
-    }
+	public CustomersPhone(int customerID, long phone) {
+		this.customerID = customerID;
+		this.phone = phone;
+	}
 
-    public long getPhone() {
-        return phone;
-    }
+	public int getCustomerID() {
+		return customerID;
+	}
 
-    public void setPhone(long phone) {
-        this.phone = phone;
-    }
+	public void setCustomerID(int customerID) {
+		this.customerID = customerID;
+	}
+
+	public long getPhone() {
+		return phone;
+	}
+
+	public void setPhone(long phone) {
+		this.phone = phone;
+	}
 }

@@ -1,18 +1,27 @@
 package application;
 
-public class Advertisers extends Employee {
-    private int points;
+public class Advertisers {
+	private int employeeID;
+	private int points;
 
-    public Advertisers(int employeeID, int points) {
-        super(employeeID, null, 0, null); // Only employeeID is relevant here
-        this.points = points;
-    }
+	public Advertisers(int employeeID, int points) {
+		this.employeeID = employeeID;
+		this.points = points;
+	}
 
-    public int getPoints() {
-        return points;
-    }
+	public int getEmployeeID() {
+		return employeeID;
+	}
 
-    public void setPoints(int points) {
-        this.points = points;
-    }
+	public void setEmployeeID(int employeeID) {
+		this.employeeID = employeeID;
+	}
+
+	public int getPoints() {
+		return points;
+	}
+
+	public void setPoints(int points) {
+		this.points = points;
+	}
 }

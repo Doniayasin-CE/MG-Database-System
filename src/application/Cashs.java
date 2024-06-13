@@ -1,48 +1,57 @@
 package application;
 
-public class Cashs extends Sale {
-    private int processNumber;
-    private double bankCash;
-    private double directCash;
-    private float discounts;
+public class Cashs {
+	private int saleID;
+	private int processNumber;
+	private double bankCash;
+	private double directCash;
+	private float discounts;
 
-    public Cashs(int saleID, int processNumber, double bankCash, double directCash, float discounts) {
-        super(saleID, null, 0, 0, 0); // Only saleID is relevant here
-        this.processNumber = processNumber;
-        this.bankCash = bankCash;
-        this.directCash = directCash;
-        this.discounts = discounts;
-    }
+	public Cashs(int saleID, int processNumber, double bankCash, double directCash, float discounts) {
+		this.saleID = saleID;
+		this.processNumber = processNumber;
+		this.bankCash = bankCash;
+		this.directCash = directCash;
+		this.discounts = discounts;
+	}
 
-    public int getProcessNumber() {
-        return processNumber;
-    }
+	public int getSaleID() {
+		return saleID;
+	}
 
-    public void setProcessNumber(int processNumber) {
-        this.processNumber = processNumber;
-    }
+	public void setSaleID(int saleID) {
+		this.saleID = saleID;
+	}
 
-    public double getBankCash() {
-        return bankCash;
-    }
+	public int getProcessNumber() {
+		return processNumber;
+	}
 
-    public void setBankCash(double bankCash) {
-        this.bankCash = bankCash;
-    }
+	public void setProcessNumber(int processNumber) {
+		this.processNumber = processNumber;
+	}
 
-    public double getDirectCash() {
-        return directCash;
-    }
+	public double getBankCash() {
+		return bankCash;
+	}
 
-    public void setDirectCash(double directCash) {
-        this.directCash = directCash;
-    }
+	public void setBankCash(double bankCash) {
+		this.bankCash = bankCash;
+	}
 
-    public float getDiscounts() {
-        return discounts;
-    }
+	public double getDirectCash() {
+		return directCash;
+	}
 
-    public void setDiscounts(float discounts) {
-        this.discounts = discounts;
-    }
+	public void setDirectCash(double directCash) {
+		this.directCash = directCash;
+	}
+
+	public float getDiscounts() {
+		return discounts;
+	}
+
+	public void setDiscounts(float discounts) {
+		this.discounts = discounts;
+	}
 }

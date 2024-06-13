@@ -1,47 +1,47 @@
 package application;
 
 public class Customer {
-    private int customerID;
-    private String customerName;
-    private String email;
-    private String NIN;
+	private int customarID;
+	private String customarName;
+	private String email;
+	private String NIN;
 
-    public Customer(int customerID, String customerName, String email, String NIN) {
-        this.customerID = customerID;
-        this.customerName = customerName;
-        this.email = email;
-        this.NIN = NIN;
-    }
+	public Customer(int customarID, String customarName, String email, String NIN) {
+		this.customarID = customarID;
+		this.customarName = customarName;
+		this.email = email;
+		this.NIN = NIN;
+	}
 
-    public int getCustomerID() {
-        return customerID;
-    }
+	public int getCustomerID() {
+		return customarID;
+	}
 
-    public void setCustomerID(int customerID) {
-        this.customerID = customerID;
-    }
+	public void setCustomerID(int customarID) {
+		this.customarID = customarID;
+	}
 
-    public String getCustomerName() {
-        return customerName;
-    }
+	public String getCustomerName() {
+		return customarName;
+	}
 
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
+	public void setCustomerName(String customarName) {
+		this.customarName = customarName;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public String getNIN() {
-        return NIN;
-    }
+	public String getNIN() {
+		return NIN;
+	}
 
-    public void setNIN(String NIN) {
-        this.NIN = NIN;
-    }
+	public void setNIN(String NIN) {
+		this.NIN = NIN;
+	}
 }
