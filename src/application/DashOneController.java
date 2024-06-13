@@ -325,6 +325,7 @@ public class DashOneController implements Initializable {
         return false;
     }
 
+    /**
     private boolean emailExistsForAnotherCustomer(int customarID, String email) {
         String query = "SELECT COUNT(*) FROM Customers WHERE email = ? AND customarID <> ?";
         try (Connection conn = DBConnection.getConnection(); PreparedStatement ps = conn.prepareStatement(query)) {
@@ -339,7 +340,7 @@ public class DashOneController implements Initializable {
             e.printStackTrace();
         }
         return false;
-    }
+    }*/
 
     // Methods for Phone
     public ObservableList<CustomersPhone> getCustomerPhones(String query) {
@@ -455,6 +456,7 @@ public class DashOneController implements Initializable {
         }
     }
 
+    /**
     private boolean carIDExist(int carID) {
         String query = "SELECT COUNT(*) FROM Cars WHERE carID = ?";
         try (Connection conn = DBConnection.getConnection(); PreparedStatement ps = conn.prepareStatement(query)) {
@@ -468,7 +470,7 @@ public class DashOneController implements Initializable {
             e.printStackTrace();
         }
         return false;
-    }
+    }*/
 
     // Methods for Service
     public ObservableList<Service> getServices(String query) {

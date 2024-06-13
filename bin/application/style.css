@@ -83,7 +83,6 @@
     -fx-border-radius: 5;
     -fx-background-radius: 5;
     -fx-background-color: #ffffff;
-    -fx-alternate-row-fill-visible: true;
     -fx-selection-bar: #4682b4;
     -fx-selection-bar-non-focused: #b0e0e6;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
